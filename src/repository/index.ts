@@ -39,3 +39,4 @@ function getDb() {
 }
 
 export { getDb, initDb };
+export * from './catalog.repository';

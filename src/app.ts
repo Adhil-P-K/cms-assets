@@ -5,8 +5,8 @@ import { createServer } from 'http';
 import { appConfig } from './config';
 import { ErrorHandler } from './middlewares';
 import { initDb } from './repository';
+import { V1Routes } from './routes/v1';
 
-// import { V1Routes } from './routes/v1';
 // import { initAjv } from './schemas';
 
 const app = express();
@@ -20,7 +20,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/sgmb', express.static('sgmb'));
-// app.use('/api/v1', V1Routes);
+app.use('/api/v1', V1Routes);
 app.use(ErrorHandler);
 const ip: any = appConfig.app.host;
 

@@ -1,0 +1,2 @@
+class CatalogRepository {}
+export { CatalogRepository };
