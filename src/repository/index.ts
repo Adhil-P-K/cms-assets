@@ -27,6 +27,7 @@ async function initDb(connectionUrl: string, callback: any) {
     db.contents = db.collection('contents');
     await db.contents.createIndex({ key: 1 }, { unique: true });
     db.smtp = db.collection('smtp');
+    db.images = db.collection('images');
     dbInstance = db;
 
     return callback(null, db);
